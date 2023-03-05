@@ -80,6 +80,26 @@ class RetryOptionsTests(unittest.TestCase):
         with self.assertRaises(Exception):
             retry_options.retry(fn)
         self.assertEqual(fn.call_count, 2)
+        
+
+class TestRetryOptionsDecorator(unittest.TestCase):
+    def test_retry_decorator(self):
+        class MockClass:
+            def __init__(self):
+                self.num_attempts = 0
+
+            @task_retry.RetryOptionsDecorator()
+            def mock_method(self):
+                self.num_attempts += 1
+                if self.num_attempts < 5:
+                    raise ValueError("Failed attempt")
+                return "Success"
+
+        obj = MockClass()
+        result = obj.mock_method()
+
+        self.assertEqual(result, "Success")
+        self.assertEqual(obj.num_attempts, 5)
 
 
 if __name__ == '__main__':
