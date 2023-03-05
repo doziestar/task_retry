@@ -11,7 +11,8 @@ class RetryOptions:
         Initializes a new instance of the RetryOptions class.
 
         :param delay_factor: The delay factor to use when calculating the delay time between retries.
-        :param randomization_factor: The randomization factor to use when calculating the delay time between retries.
+        :param randomization_factor: The randomization factor to use when calculating the delay time between retries.s
+        
         :param max_delay: The maximum delay time between retries.
         :param max_attempts: The maximum number of attempts to retry the function.
         """
