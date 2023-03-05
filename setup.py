@@ -28,7 +28,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description=" this package offers an easy-to-use and flexible solution for implementing retry functionality in Python programs, helping to reduce the impact of transient errors and improve the reliability of the software.",
+    description=" This package offers an easy-to-use and flexible solution for implementing retry functionality in Python programs, helping to reduce the impact of transient errors and improve the reliability of the software.",
     entry_points={
         'console_scripts': [
             'task_retry=task_retry.cli:main',
@@ -41,8 +41,8 @@ setup(
     keywords='task_retry',
     name='task_retry',
     packages=find_packages(include=['task_retry', 'task_retry.*']),
-    test_suite='tests',
-    tests_require=test_requirements,
+    # test_suite='tests',
+    # tests_require=test_requirements,
     url='https://github.com/doziestar/task_retry',
     version='0.1.0',
     zip_safe=False,
